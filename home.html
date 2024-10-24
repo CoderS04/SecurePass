@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+
+    <title>SecurePass - Password Manager</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div>
+            <h1 id="heading">SecurePass</h1>
+            <p>Simplifying Password Management</p>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-option"><a href="/home.html">Home</a></li>
+            <li class="nav-option"><a href="/login.html">Sign In</a></li>
+            <li class="nav-option"><a href="">About</a></li>
+            <li class="nav-option"><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="floating-box">
+        <p>24/7 Helpline: 020 77787779</p>
+        <p>Customer Support: support@securepass.com</p>
+    </div>
+
+    <main>
+        <div class="box1">
+            <div class="container">
+                <h2>Welcome to SecurePass – Your Ultimate Password Management Solution!</h2>
+                <p>
+                    In today’s fast-paced digital world, managing multiple passwords securely is crucial. With
+                    SecurePass, you can protect your online accounts and never worry about forgetting passwords again.
+                    Our user-friendly, highly secure password manager ensures your sensitive information is always safe
+                    and easily accessible.
+                </p>
+
+                <div class="signup-link">
+                    <a href="/signup.html">Get Started Now!</a>
+                </div>
+
+                <!-- <button class="signup-link">Get Started Now!</button> -->
+            </div>
+            <div class="login-div">
+                <p>Already Registered?</p>
+                <form action="/login.html" method="post">
+                    <label for="login-email" class="data-input-label">Email</label>
+                    <input type="email" name="login-email" id="login-email-input" class="data-input-field" required>
+                    <label for="login-password" class="data-input-label">Password</label>
+                    <input type="password" name="login-password" id="login-password-input" class="data-input-field" required>
+                    <input type="submit" value="Login" class="signin-button">
+                </form>
+            </div>
+        </div>
+
+
+        <div class="box2 light-box">
+            <h3 class="subHeading">Key Features</h3>
+            <ul class="box-list" id="keyFeatures-list">
+                <li class="Feature">
+                    <div>
+                        <p class="Feature-title">Secure Storage</p>
+                        <p>Store all your passwords in one encrypted vault.</p>
+                    </div>
+                </li>
+                <li class="Feature">
+                    <div>
+                        <p class="Feature-title">Password Generator</p>
+                        <p>Create strong, unique passwords with a single click.</p>
+                    </div>
+                </li>
+                <li class="Feature">
+                    <div>
+                        <p class="Feature-title">Multi-device Sync</p>
+                        <p>Access your passwords from any device, anywhere.</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="box2 dark-box">
+            <h3 class="subHeading">Why Choose SecurePass?</h3>
+            <ul class="box-list" id="feature-list">
+                <li class="Feature">
+                    <div>
+                        <p class="Feature-title">Advanced Encryption</p>
+                        <p>Your passwords are protected with AES-256 encryption, ensuring only you have access to your
+                            data.</p>
+                    </div>
+                </li>
+
+                <li class="Feature">
+                    <div>
+                        <p class="Feature-title">Easy-to-Use Interface</p>
+                        <p>Manage your passwords seamlessly with our clean and intuitive design.</p>
+                    </div>
+                </li>
+                <li class="Feature">
+                    <div>
+                        <p class="Feature-title">Password Strength Analysis</p>
+                        <p>Instantly check if your passwords are strong enough to keep your accounts safe.</p>
+                    </div>
+                </li>
+                <li class="Feature">
+                    <div>
+                        <p class="Feature-title">Privacy First</p>
+                        <p>We never store or access your master password—your data stays in your hands.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box2 light-box flex-column-box">
+            <h3 class="subHeading">Start Securing Your Digital Life Today!</h3>
+            <p>Sign up now and experience the peace of mind that comes with strong, secure password management. With
+                SecurePass, your online security is our top priority.</p>
+            <div class="signup-link">
+                <a href="/signup.html">Get Started Now!</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Developed by Samruddha Barhanpurkar</p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/samruddha004/"><img src="insta-logo.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/samruddha-barhanpurkar-304520307/"><img src="linkedin-logo.png"
+                    alt="LinkedIn"></a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 SecurePass. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
