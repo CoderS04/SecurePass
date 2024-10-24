@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePass - Password Manager</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .parent-container {
+            padding: 50px;
+        }
+
+        .parent-container h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            margin: 30px auto;
+            padding: 30px;
+            text-align: center;
+            background-color: #e9eaeb;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .card div:first-child {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 20px;
+        }
+
+        #password-container {
+            width: 70vw;
+            height: 50vh;
+            background-color: white;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 5px 5px 5px 0px #9ba0a5;
+            visibility: hidden;
+            position: fixed;
+            z-index: 8;
+            transform: translate(12%, -20%);
+
+        }
+
+        #password-container img {
+            position: fixed;
+            right: 10px;
+            top: 5px;
+            transform: rotate(-90deg);
+            transition: all 0.3s;
+        }
+
+        #password-container img:hover {
+            cursor: pointer;
+            transform: rotate(90deg);
+            transition: all 0.3s;
+        }
+        #password-container ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+
+        h3 {
+            font-size: 25px;
+        }
+
+        .action-button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin: 0px 10px;
+            transition: all 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #2a602c;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .table {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            align-items: center;
+        }
+
+        .tablerow-title,
+        .tablerow-data,
+        .activity-div {
+            line-height: 60px;
+            height: 60px;
+            border-bottom: 1px solid black;
+        }
+
+        .tablerow-title {
+            font-size: 20px;
+        }
+
+        .activity-div {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .activity-button {
+            width: 24px;
+            height: 24px;
+            transform: scale(1);
+            transition: all 0.3s;
+        }
+
+        .activity-button:hover {
+            transform: scale(1.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div>
+            <h1 id="heading">SecurePass</h1>
+            <p>Simplifying Password Management</p>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-option"><a href="">Dashboard</a></li>
+            <li class="nav-option"><a href="">Contact</a></li>
+            <li class="nav-option"><a href="">Account</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="parent-container">
+
+            <h2>Welcome to Your SecurePass Dashboard, [User's Name]!</h2>
+
+            <div class="card">
+                <div>
+                    <h3>Your Passwords</h3>
+                    <div>
+                        <button class="action-button">Add</button>
+                        <button class="action-button">Generate</button>
+                    </div>
+                </div>
+
+                <div id="password-container">
+                    <img src="cross.png" alt="Close" onclick=closeDetails()>
+                    <ul>
+                        <li>Website:</li>
+                        <li>Username:</li>
+                        <li>Password:</li>
+                        <li>Other details:</li>
+                    </ul>
+                </div>
+
+                <div class="table">
+                    <p class="tablerow-title">Sr.No.</p>
+                    <p class="tablerow-title">Category</p>
+                    <p class="tablerow-title">Website</p>
+                    <p class="tablerow-title">Username</p>
+                    <p class="tablerow-title">Actions</p>
+                    <p class="tablerow-data">1.</p>
+                    <p class="tablerow-data">Banking</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">2.</p>
+                    <p class="tablerow-data">Social media</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">3.</p>
+                    <p class="tablerow-data">Gmail</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">4.</p>
+                    <p class="tablerow-data">Misc.</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">4.</p>
+                    <p class="tablerow-data">Misc.</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">4.</p>
+                    <p class="tablerow-data">Misc.</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">4.</p>
+                    <p class="tablerow-data">Misc.</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">4.</p>
+                    <p class="tablerow-data">Misc.</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">4.</p>
+                    <p class="tablerow-data">Misc.</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                    <p class="tablerow-data">4.</p>
+                    <p class="tablerow-data">Misc.</p>
+                    <p class="tablerow-data">dummywebsite.com</p>
+                    <p class="tablerow-data">trialacc1234</p>
+                    <div class="activity-div">
+                        <img src="view.png" alt="View" class="activity-button" onclick=viewDetails()>
+                        <img src="edit.png" alt="Edit" class="activity-button">
+                        <img src="delete.png" alt="Delete" class="activity-button">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Developed by Samruddha Barhanpurkar</p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/samruddha004/"><img src="insta-logo.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/samruddha-barhanpurkar-304520307/"><img src="linkedin-logo.png"
+                    alt="LinkedIn"></a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 SecurePass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function viewDetails() {
+            document.getElementById('password-container').style.visibility='visible';
+        }
+        function closeDetails() {
+            document.getElementById('password-container').style.visibility='hidden';
+        }
+    </script>
+
+
+</body>
+
+</html>
