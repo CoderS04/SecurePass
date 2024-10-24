@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+
+    <title>SecurePass - Password Manager</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .signup-box {
+            margin: 60px auto;
+            padding: 30px;
+            text-align: center;
+            background-color: #e9eaeb;
+            width: 50vw;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .signup-box h2 {
+            font-size: 40px;
+        }
+
+        
+        .signin-button {
+            font-size: 30px;
+        }
+
+        .signup-form {
+            margin: 40px 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            column-gap: 40px;
+            row-gap: 10px;
+        }
+        
+        .input-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        
+        .input-box label {
+            font-size: 23px;
+            width: 30%;
+        }
+
+        .input-box input,select {
+            padding: 10px 5px;
+            font-size: 17px;
+            width: 70%;
+            
+        }
+        
+        @media only screen and (max-width:1280px) {
+            .input-box {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .input-box label {
+                text-align: left;
+                width: 100%;
+            }
+            
+            .input-box input,select {
+                width: 100%;
+                
+            }
+
+        }
+
+        @media only screen and (max-width:730px) {
+            .signup-form{
+                grid-template-columns: 1fr;
+                row-gap: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div>
+            <h1 id="heading">SecurePass</h1>
+            <p>Simplifying Password Management</p>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-option"><a href="/home.html">Home</a></li>
+            <li class="nav-option"><a href="/signup.html">Sign Up</a></li>
+            <li class="nav-option"><a href="">About</a></li>
+            <li class="nav-option"><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="signup-box">
+            <h2>Welcome Back! Ready to Unlock Your Passwords?</h2>
+            <form action="/login.html" method="post">
+                <div class="signup-form">
+                    <div class="input-box">
+                        <label for="email" id="email-label">Email Address</label>
+                        <input type="email" name="email" id="email-input">
+                    </div>
+                    <div class="input-box">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="number" name="phoneNumber" id="">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Master Password</label>
+                        <input type="password" name="password" id="">
+                    </div>
+                    <div class="input-box">
+                        <label for="otp">Enter OTP</label>
+                        <input type="number" name="otp" id="">
+                    </div>
+                </div>
+
+                <input type="submit" value="Login" class="signin-button">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Developed by Samruddha Barhanpurkar</p>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/samruddha004/"><img src="insta-logo.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/samruddha-barhanpurkar-304520307/"><img src="linkedin-logo.png" alt="LinkedIn"></a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 SecurePass. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
